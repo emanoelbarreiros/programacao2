@@ -71,7 +71,24 @@ public class Date {
 	}
 	
 	public void adicionarDia() {
-		if (dia + 1 <= 30) {
+		int diasMes = 0 ;
+		if (this.mes == 1 || this.mes == 3 || this.mes == 5 
+				|| this.mes == 7 || this.mes == 8
+				|| this.mes == 10 || this.mes == 12) {
+			diasMes = 31;
+		} else if (this.mes == 4 || this.mes == 6 
+				|| this.mes == 9 || this.mes == 11) {
+			diasMes = 30;
+		} else {
+			boolean anoBissexto = this.ano % 4 == 0;
+			if (anoBissexto) {
+				diasMes = 29;
+			} else {
+				diasMes = 28;
+			}
+		}
+		
+		if (dia + 1 <= diasMes) {
 			dia = dia + 1;
 		} else {
 			dia = 1;
