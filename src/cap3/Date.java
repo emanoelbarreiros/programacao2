@@ -39,5 +39,50 @@ public class Date {
 	public void displayDate() {
 		System.out.printf("%d/%d/%d\n", dia, mes, ano);
 	}
+	
+	public boolean antes(Date outraData) {
+		boolean retorno = true;
+		
+		if (this.ano > outraData.getAno()) {
+			retorno = false;
+		} else if (this.ano < outraData.getAno()) {
+			retorno = true;
+		} else {
+			if (this.mes > outraData.getMes()) {
+				retorno = false;
+			} else if (this.mes < outraData.getMes()) {
+				retorno = true;
+			} else {
+				if (this.dia < outraData.getDia()) {
+					retorno = true;
+				} else {
+					retorno = false;
+				}
+			}
+		}
+		
+		return retorno;
+	}
+	
+	public int diferenca(Date data2) {
+		int dif = 0;
+		
+		return dif;
+	}
+	
+	public void adicionarDia() {
+		if (dia + 1 <= 30) {
+			dia = dia + 1;
+		} else {
+			dia = 1;
+			if (mes + 1 <= 12) {
+				mes = mes + 1;
+			} else {
+				dia = 1;
+				mes = 1;
+				ano = ano + 1;
+			}
+		}
+	}
 
 }
