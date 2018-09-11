@@ -4,9 +4,15 @@ public class LivroNotas {
 	
 	private String nomeCurso;
 	private boolean turmaExtra;
+	private String nomeInstrutor;
 	
 	public LivroNotas(String nomeCurso) {
 		this.nomeCurso = nomeCurso;
+	}
+	
+	public LivroNotas(String nomeCurso, String nomeInstrutor) {
+		this.nomeCurso = nomeCurso;
+		this.nomeInstrutor = nomeInstrutor;
 	}
 	
 	public LivroNotas(String nomeCurso, boolean turmaExtra) {
@@ -21,6 +27,11 @@ public class LivroNotas {
 		} else {
 			System.out.println("Este curso é uma turma REGULAR.");
 		}
+	}
+	
+	public void exibirMensagem() {
+		exibirBoasVindas();
+		System.out.printf("Este curso é ministrado por %s.\n", this.nomeInstrutor);
 	}
 	
 	public void setNomeCurso(String nome) {
@@ -39,4 +50,11 @@ public class LivroNotas {
 		this.turmaExtra = valor;
 	}
 
+	public void setNomeInstrutor(String nome) {
+		this.nomeInstrutor = nome;
+	}
+	
+	public String getNomeInstrutor() {
+		return this.nomeInstrutor;
+	}
 }
