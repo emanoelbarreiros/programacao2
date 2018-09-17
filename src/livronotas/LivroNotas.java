@@ -5,6 +5,9 @@ public class LivroNotas {
 	private String nomeCurso;
 	private boolean turmaExtra;
 	private String nomeInstrutor;
+	private double notasSomadas;
+	private int quantidadeNotas;
+	private int quantidadeNotasAbaixoMedia;
 	
 	public LivroNotas(String nomeCurso) {
 		this.nomeCurso = nomeCurso;
@@ -18,6 +21,20 @@ public class LivroNotas {
 	public LivroNotas(String nomeCurso, boolean turmaExtra) {
 		this.nomeCurso = nomeCurso;
 		this.turmaExtra = turmaExtra;
+	}
+	
+	public double determinarMediaTurma() {
+		double resultado = notasSomadas / quantidadeNotas;
+		return resultado;
+	}
+	
+	public void adicionarNota(double nota) {
+		notasSomadas = notasSomadas + nota;
+		quantidadeNotas = quantidadeNotas + 1;
+		
+		if (nota < 7) {
+			quantidadeNotasAbaixoMedia = quantidadeNotasAbaixoMedia + 1;
+		}
 	}
 
 	public void exibirBoasVindas() {
@@ -56,5 +73,29 @@ public class LivroNotas {
 	
 	public String getNomeInstrutor() {
 		return this.nomeInstrutor;
+	}
+
+	public double getNotasSomadas() {
+		return notasSomadas;
+	}
+
+	public void setNotasSomadas(double notasSomadas) {
+		this.notasSomadas = notasSomadas;
+	}
+
+	public int getQuantidadeNotas() {
+		return quantidadeNotas;
+	}
+
+	public void setQuantidadeNotas(int quantidadeNotas) {
+		this.quantidadeNotas = quantidadeNotas;
+	}
+
+	public int getQuantidadeNotasAbaixoMedia() {
+		return quantidadeNotasAbaixoMedia;
+	}
+
+	public void setQuantidadeNotasAbaixoMedia(int quantidadeNotasAbaixoMedia) {
+		this.quantidadeNotasAbaixoMedia = quantidadeNotasAbaixoMedia;
 	}
 }
