@@ -51,6 +51,15 @@ public class LivroNotas {
 		System.out.printf("Este curso é ministrado por %s.\n", this.nomeInstrutor);
 	}
 	
+	public void exibirMensagem(String nomeInstrutor) {
+		exibirBoasVindas();
+		System.out.printf("Este curso é ministrado por %s.\n", nomeInstrutor);
+	}
+	
+	public void exibirMensagem(String nomeInstrutor, String nomeCurso) {
+		
+	}
+	
 	public void setNomeCurso(String nome) {
 		this.nomeCurso = nome;
 	}
