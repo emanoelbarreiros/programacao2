@@ -51,35 +51,67 @@ public class Tartaruga {
 		canetaAbaixada = false;
 	}
 	
-	public void avancar(int qtdPassos, Tabuleiro tabuleiro) {
+	public void avancar(int qtdPassos, Tabuleiro tabuleiro) throws InterruptedException  {
 		if (orientacao == ORIENTACAO_NORTE) {
-			if (y - qtdPassos < 0) {
-				y = 0;
-			} else {
-				y = y - qtdPassos;
+			for (int i = 0; i < qtdPassos; i++) {
+				if (y - 1 < 0) {
+					y = 0;
+					break;
+			 	} else {
+					y = y - 1;
+				}
+				if (this.canetaAbaixada) {
+					tabuleiro.riscar();
+				}
+				tabuleiro.setyTartaruga(y);
+				tabuleiro.exibirTabuleiro();
+				Thread.sleep(1000);
 			}
-			tabuleiro.setyTartaruga(y);
 		} else if (orientacao == ORIENTACAO_LESTE) {
-			if (x + qtdPassos > tabuleiro.getDimensaoX() - 1) {
-				x = tabuleiro.getDimensaoX() - 1;
-			} else {
-				x = x + qtdPassos;
+			for (int i = 0; i < qtdPassos; i++) {
+				if (x + 1 > tabuleiro.getDimensaoX() - 1) {
+					x = tabuleiro.getDimensaoX() - 1;
+					break;
+			 	} else {
+					x = x + 1;
+				}
+				if (this.canetaAbaixada) {
+					tabuleiro.riscar();
+				}
+				tabuleiro.setxTartaruga(x);
+				tabuleiro.exibirTabuleiro();
+				Thread.sleep(1000);
 			}
-			tabuleiro.setxTartaruga(x);
 		} else if (orientacao == ORIENTACAO_SUL) {
-			if (y + qtdPassos > tabuleiro.getDimensaoY() - 1) {
-				y = tabuleiro.getDimensaoY() - 1;
-			} else {
-				y = y + qtdPassos;
+			for (int i = 0; i < qtdPassos; i++) {
+				if (y + 1 > tabuleiro.getDimensaoY() - 1) {
+					y = tabuleiro.getDimensaoY() - 1;
+					break;
+			 	} else {
+					y = y + 1;
+				}
+				if (this.canetaAbaixada) {
+					tabuleiro.riscar();
+				}
+				tabuleiro.setyTartaruga(y);
+				tabuleiro.exibirTabuleiro();
+				Thread.sleep(1000);
 			}
-			tabuleiro.setyTartaruga(y);
 		} else if (orientacao == ORIENTACAO_OESTE) {
-			if (x - qtdPassos < 0) {
-				x = 0;
-			} else {
-				x = x - qtdPassos;
+			for (int i = 0; i < qtdPassos; i++) {
+				if (x - 1 < 0) {
+					x = 0;
+					break;
+			 	} else {
+					x = x - 1;
+				}
+				if (this.canetaAbaixada) {
+					tabuleiro.riscar();
+				}
+				tabuleiro.setxTartaruga(x);
+				tabuleiro.exibirTabuleiro();
+				Thread.sleep(1000);
 			}
-			tabuleiro.setxTartaruga(x);
 		}
 	}
 	
