@@ -20,13 +20,9 @@ public class Teste {
 			int valor = c.dividir(a, b);
 			
 			System.out.println(valor);
-		} catch(CalculadoraException e) {
+		} catch(Exception e) {
 			System.out.println("você não estudou matemática? não dá pra dividir por zero...");
-		} catch(InputMismatchException e) {
-			System.out.println("informe apenas valores inteiros");
-		} finally {
-			System.out.println("executou o finally");
-		}
+		} 
 	}
 
 }
