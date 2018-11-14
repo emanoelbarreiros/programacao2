@@ -16,7 +16,7 @@ public class ButtonFrame extends JFrame
 
    public ButtonFrame()
    {
-      super("Testing Buttons");
+      super("Testando botões");
       setLayout(new FlowLayout()); 
 
       botaoSimples = new JButton("Botão Simples"); 
