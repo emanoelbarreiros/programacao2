@@ -18,6 +18,7 @@ public class ButtonFrame extends JFrame
    {
       super("Testando botões");
       setLayout(new FlowLayout()); 
+      setDefaultCloseOperation(EXIT_ON_CLOSE);
 
       botaoSimples = new JButton("Botão Simples"); 
       add(botaoSimples); 
