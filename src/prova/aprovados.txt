@@ -1,0 +1,4 @@
+7.00 Aluno3
+9.10 Aluno4
+7.50 Aluno5
+10.00 Aluno6

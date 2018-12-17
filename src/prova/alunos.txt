@@ -1,0 +1,6 @@
+5.5 Aluno1
+3.5 Aluno2
+7.0 Aluno3
+9.1 Aluno4
+7.5 Aluno5
+10.0 Aluno6

@@ -1,13 +1,26 @@
 package arquivos;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Scanner;
 
-public class DemonstracaoFile {
+public class DemonstracaoFile implements Serializable {
+	
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4229554704847099534L;
+
+	private int b;
+	
+	private int c;
+	
+
 	public static void main(String[] args) throws IOException {
 		Scanner input = new Scanner(System.in);
 
